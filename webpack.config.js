@@ -16,7 +16,11 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 9000,
     hot: true,
   },
   plugins: [
